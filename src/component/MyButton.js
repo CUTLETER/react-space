@@ -1,19 +1,16 @@
 import { useState } from "react";
 
-function MyButton() {
-  const [count, setCount] = useState(0); // 초기값 0
-  // useState로 인해 현재 count 수와 누적시킬 setCount 함수를 얻을 수 있게 됨
-
-  let handleClick = () => {
-    alert('You clicked me!');
-    setCount(count+1);
-  }
-
+function MyButton({count, onClick}) {
   return(
-    <div>
-      <button type="button" onClick={handleClick}>Clicked {count} times</button>
-      {/* 이벤트 핸들러 함수 뒤에 () 붙이지 말것. 호출 XXX. 오로지 전달만! */}
-    </div>
+    <button type="button" onClick={onClick}> 
+    {/* 클릭하면 onClick 핸들러 실행됨 -> 
+    각 버튼의 onClick은 handleClick 함수로 설정됨 -> 
+    App 내부의 핸들러 함수 실행됨 ->
+    setCount 호출함 ->
+    count state 증가시킴 ->
+    새로운 count 값은 각 버튼에 props로 전달됨*/}
+      clicked {count} times
+    </button>
   )
 }
 
