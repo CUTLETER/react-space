@@ -18,7 +18,7 @@ function App01() {
       <h1>Welcome to my App</h1>
       <User />
       <hr/>
-      <MyButton count={count} onClick={handleClick} /> {/* 렌더링 */}
+      <MyButton count={count} onClick={handleClick} /> {/* 렌더링 작업*/}
       <MyButton count={count} onClick={handleClick}/> {/* 버튼마다 클릭 횟수가 각각 다르게 누적됨 */}
       <hr/>
       <Product />
