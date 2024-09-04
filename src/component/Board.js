@@ -1,7 +1,7 @@
 import Square from "./Square";
 import {useState} from 'react';
 
-function Board() { // 부모
+function Board({xIsNext, squares, onPlay}) { // 부모
   const [squares, setSquares] = useState(Array(9).fill(null));
   const [xIsNext, setXIsNext] = useState(true);
   const winner = calculateWinner(squares);
